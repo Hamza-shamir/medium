@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+      <title>Medium</title>
+      <!-- Required meta tags -->
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+      <!-- Bootstrap CSS v5.2.1 -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous" />
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+      <style>
+            .icon-hover {
+                  transition: transform 0.3s ease, color 0.3s ease;
+                  cursor: pointer;
+            }
+
+            .icon-hover:hover {
+                  transform: scale(1.2);
+                  color: #0d6efd;
+                  /* Bootstrap primary color */
+            }
+
+            .nav-pills .nav-link.active {
+                  background-color: #0d6efd;
+            }
+
+            img {
+                  max-width: 25px;
+            }
+
+            .pic.col-md-4 img {
+                  max-width: 180px;
+                  margin-top: 80px;
+            }
+
+            .carousel-item>.row>div {
+                  text-align: center;
+                  border: #000;
+                  border-radius: 10px;
+            }
+
+            .carousel-item a {
+                  display: block;
+                  background-color: #f8f9fa;
+                  color: #000;
+                  text-decoration: none;
+                  border: 1px solid #dee2e6;
+                  border-radius: 8px;
+                  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+            }
+
+            .carousel-control-prev,
+            .carousel-control-next {
+                  width: auto;
+                  background: transparent;
+                  border: none;
+            }
+
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                  background-color: transparent;
+                  filter: invert(100%);
+                  width: 2rem;
+                  height: 2rem;
+            }
+            .row-combo{
+                  display: flex;
+            }
+
+            @media (max-width: 768px) {
+                  .carousel .col-md-4 {
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                  }
+
+            }
+
+            @media (min-width: 769px) {
+                  .carousel .col-md-4 {
+                        flex: 0 0 33.333%;
+                        max-width: 33.333%;
+                  }
+                
+            }
+
+            .side.col-md-4 {
+                  position: sticky;
+                  height: 100%;
+                  top: 0;
+                  display: flex;
+                  flex-wrap: wrap;
+            }
+      </style>
+</head>
+
+<body>
+      <header>
+            <nav class="navbar navbar-expand-sm bg-light">
+                  <div class="container-fluid d-flex align-items-center">
+                        <a class="navbar-brand fw-bolder fs-3" href="#">Medium</a>
+
+                        <form class="d-flex flex-grow-1" style="max-width: 200px; width: 100%;" role="search">
+                              <input class="form-control me-2" type="search" placeholder="Search..."
+                                    aria-label="Search">
+                        </form>
+                        <ul class="navbar-nav ms-auto align-items-center">
+                              <li class="nav-item">
+                                    <a class="nav-link text-dark d-flex align-items-center me-3 fs-5" href="#">
+                                          <i class="bi bi-pencil-square me-1 fs-4 icon-hover"></i> Write
+                                    </a>
+                              </li>
+                              <li class="nav-item">
+                                    <a class="nav-link text-dark d-flex align-items-center" href="#">
+                                          <i class="bi bi-bell fs-4 me-3 icon-hover"></i>
+
+                                    </a>
+                              </li>
+                              <li class="nav-item">
+                                    <a class="nav-link text-dark d-flex align-items-center" href="#">
+                                          <i class="bi bi-person-circle fs-2 me-3 icon-hover"></i>
+
+                                    </a>
+                              </li>
+                        </ul>
+                  </div>
+            </nav>
+      </header>
+      <main>
+            <section id="page">
+                  <div class="container">
+                        <div class="row">
+                              <div class="col-md-1"></div>
+                              <div class="col-md-7">
+
+                                    <div class="container mt-5 p-0">
+                                          <div id="multiItemCarousel" class="carousel slide" data-bs-ride="carousel">
+                                                <div class="carousel-inner">
+                                                      <!-- First slide -->
+                                                      <div class="carousel-item active">
+                                                            <div class="row">
+                                                                  <div class="col-2"><a href="#home">Home</a></div>
+                                                                  <div class="col-2"><a href="#news">News</a></div>
+                                                                  <div class="col-2"><a href="#contact">Contact</a>
+                                                                  </div>
+                                                                  <div class="col-2"><a href="#about">About</a></div>
+                                                                  <div class="col-2"><a href="#support">Support</a>
+                                                                  </div>
+                                                                  <div class="col-2"><a href="#blog">Blog</a></div>
+                                                            </div>
+                                                      </div>
+                                                      <!-- Second slide -->
+                                                      <div class="carousel-item">
+                                                            <div class="row">
+                                                                  <div class="col-2"><a href="#custom">Custom</a></div>
+                                                                  <div class="col-2"><a href="#logo">Logo</a></div>
+                                                                  <div class="col-2"><a href="#friends">Friends</a>
+                                                                  </div>
+                                                                  <div class="col-2"><a href="#partners">Partners</a>
+                                                                  </div>
+                                                                  <div class="col-2"><a href="#tools">Tools</a></div>
+                                                                  <div class="col-2"><a href="#base">Base</a></div>
+                                                            </div>
+                                                      </div>
+
+                                                </div>
+
+                                                <!-- Controls -->
+                                                <button class="carousel-control-prev" type="button"
+                                                      data-bs-target="#multiItemCarousel" data-bs-slide="prev">
+                                                      <span
+                                                            class="carousel-control-prev-icon bg-dark rounded-circle"></span>
+                                                      <span class="visually-hidden">Previous</span>
+                                                </button>
+                                                <button class="carousel-control-next" type="button"
+                                                      data-bs-target="#multiItemCarousel" data-bs-slide="next">
+                                                      <span
+                                                            class="carousel-control-next-icon bg-dark rounded-circle"></span>
+                                                      <span class="visually-hidden">Next</span>
+                                                </button>
+                                          </div>
+                                    </div>
+
+                                    <div class="row-combo g-2">
+                                          <div class="col-md-8">
+                                                <div class="d-flex flex-wrap">
+                                                      <div class="d-flex flex-wrap mt-5 justify-content-center">
+                                                            <img src="/images/wise.png" alt="Logo">
+                                                            <p class="mx-2 small ">in</p>
+                                                            <h5 class="small">Psychology of Workplaces</h5>
+                                                            <p class="mx-2 small">by</p>
+                                                            <h5 class="small">George J. Ziogas</h5>
+                                                      </div>
+                                                      <h3 class="mt-2">Resumes Are Dying — Here’s What’s Replacing
+                                                            Them
+                                                      </h3>
+                                                      <p>How modern hiring is leaving resumes behind</p>
+
+                                                      <div class="d-flex">
+                                                            <div class="d-flex gap-3">
+                                                                  <i
+                                                                        class="bi bi-star-fill text-warning  star-icon"></i>
+                                                                  <p>4 june</p>
+                                                                  <i class="bi bi-hand-thumbs-up icon-hover"
+                                                                        title="Clap"></i>
+                                                                  <p>1.2k</p>
+                                                                  <i class="bi bi-chat-left-text icon-hover"
+                                                                        title="Response"></i>
+                                                                  <p>443</p>
+                                                            </div>
+                                                            <div class="d-flex gap-3">
+                                                                  <i class="bi bi-hand-thumbs-down icon-hover"
+                                                                        title="Dislike"></i>
+                                                                  <i class="bi bi-three-dots icon-hover"
+                                                                        title="More"></i>
+                                                            </div>
+
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <div class=" pic col-md-4">
+                                                <img src="/images/1_1.png">
+                                          </div>
+
+                                    </div>
+
+                                    <div class="row-combo g-2">
+                                          <div class="col-md-8">
+                                                <div class="d-flex flex-wrap">
+                                                      <div class="d-flex flex-wrap mt-5 justify-content-center">
+                                                            <img src="/images/wise.png" alt="Logo">
+                                                            <p class="mx-2 small ">in</p>
+                                                            <h5 class="small">Psychology of Workplaces</h5>
+                                                            <p class="mx-2 small">by</p>
+                                                            <h5 class="small">George J. Ziogas</h5>
+                                                      </div>
+                                                      <h3 class="mt-2">Resumes Are Dying — Here’s What’s Replacing
+                                                            Them
+                                                      </h3>
+                                                      <p>How modern hiring is leaving resumes behind</p>
+
+                                                      <div class="d-flex">
+                                                            <div class="d-flex gap-3">
+                                                                  <i
+                                                                        class="bi bi-star-fill text-warning  star-icon"></i>
+                                                                  <p>4 june</p>
+                                                                  <i class="bi bi-hand-thumbs-up icon-hover"
+                                                                        title="Clap"></i>
+                                                                  <p>1.2k</p>
+                                                                  <i class="bi bi-chat-left-text icon-hover"
+                                                                        title="Response"></i>
+                                                                  <p>443</p>
+                                                            </div>
+                                                            <div class="d-flex gap-3">
+                                                                  <i class="bi bi-hand-thumbs-down icon-hover"
+                                                                        title="Dislike"></i>
+                                                                  <i class="bi bi-three-dots icon-hover"
+                                                                        title="More"></i>
+                                                            </div>
+
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <div class=" pic col-md-4">
+                                                <img src="/images/flower.png">
+                                          </div>
+
+                                    </div>
+
+                                    <div class="row-combo g-2">
+                                          <div class="col-md-8">
+                                                <div class="d-flex flex-wrap">
+                                                      <div class="d-flex flex-wrap mt-5 justify-content-center">
+                                                            <img src="/images/wise.png" alt="Logo">
+                                                            <p class="mx-2 small ">in</p>
+                                                            <h5 class="small">Psychology of Workplaces</h5>
+                                                            <p class="mx-2 small">by</p>
+                                                            <h5 class="small">George J. Ziogas</h5>
+                                                      </div>
+                                                      <h3 class="mt-2">Resumes Are Dying — Here’s What’s Replacing
+                                                            Them
+                                                      </h3>
+                                                      <p>How modern hiring is leaving resumes behind</p>
+
+                                                      <div class="d-flex">
+                                                            <div class="d-flex gap-3">
+                                                                  <i
+                                                                        class="bi bi-star-fill text-warning  star-icon"></i>
+                                                                  <p>4 june</p>
+                                                                  <i class="bi bi-hand-thumbs-up icon-hover"
+                                                                        title="Clap"></i>
+                                                                  <p>1.2k</p>
+                                                                  <i class="bi bi-chat-left-text icon-hover"
+                                                                        title="Response"></i>
+                                                                  <p>443</p>
+                                                            </div>
+                                                            <div class="d-flex gap-3">
+                                                                  <i class="bi bi-hand-thumbs-down icon-hover"
+                                                                        title="Dislike"></i>
+                                                                  <i class="bi bi-three-dots icon-hover"
+                                                                        title="More"></i>
+                                                            </div>
+
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <div class=" pic col-md-4">
+                                                <img src="/images/2-1.png">
+                                          </div>
+
+                                    </div>
+
+                                    <div class="row-combo g-2">
+                                          <div class="col-md-8">
+                                                <div class="d-flex flex-wrap">
+                                                      <div class="d-flex flex-wrap mt-5 justify-content-center">
+                                                            <img src="/images/wise.png" alt="Logo">
+                                                            <p class="mx-2 small ">in</p>
+                                                            <h5 class="small">Psychology of Workplaces</h5>
+                                                            <p class="mx-2 small">by</p>
+                                                            <h5 class="small">George J. Ziogas</h5>
+                                                      </div>
+                                                      <h3 class="mt-2">Resumes Are Dying — Here’s What’s Replacing
+                                                            Them
+                                                      </h3>
+                                                      <p>How modern hiring is leaving resumes behind</p>
+
+                                                      <div class="d-flex">
+                                                            <div class="d-flex gap-3">
+                                                                  <i
+                                                                        class="bi bi-star-fill text-warning  star-icon"></i>
+                                                                  <p>4 june</p>
+                                                                  <i class="bi bi-hand-thumbs-up icon-hover"
+                                                                        title="Clap"></i>
+                                                                  <p>1.2k</p>
+                                                                  <i class="bi bi-chat-left-text icon-hover"
+                                                                        title="Response"></i>
+                                                                  <p>443</p>
+                                                            </div>
+                                                            <div class="d-flex gap-3">
+                                                                  <i class="bi bi-hand-thumbs-down icon-hover"
+                                                                        title="Dislike"></i>
+                                                                  <i class="bi bi-three-dots icon-hover"
+                                                                        title="More"></i>
+                                                            </div>
+
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <div class=" pic col-md-4">
+                                                <img src="/images/1_1.png">
+                                          </div>
+
+                                    </div>
+
+                                    <div class="row-combo g-2">
+                                          <div class="col-md-8">
+                                                <div class="d-flex flex-wrap">
+                                                      <div class="d-flex flex-wrap mt-5 justify-content-center">
+                                                            <img src="/images/wise.png" alt="Logo">
+                                                            <p class="mx-2 small ">in</p>
+                                                            <h5 class="small">Psychology of Workplaces</h5>
+                                                            <p class="mx-2 small">by</p>
+                                                            <h5 class="small">George J. Ziogas</h5>
+                                                      </div>
+                                                      <h3 class="mt-2">Resumes Are Dying — Here’s What’s Replacing
+                                                            Them
+                                                      </h3>
+                                                      <p>How modern hiring is leaving resumes behind</p>
+
+                                                      <div class="d-flex">
+                                                            <div class="d-flex gap-3">
+                                                                  <i
+                                                                        class="bi bi-star-fill text-warning  star-icon"></i>
+                                                                  <p>4 june</p>
+                                                                  <i class="bi bi-hand-thumbs-up icon-hover"
+                                                                        title="Clap"></i>
+                                                                  <p>1.2k</p>
+                                                                  <i class="bi bi-chat-left-text icon-hover"
+                                                                        title="Response"></i>
+                                                                  <p>443</p>
+                                                            </div>
+                                                            <div class="d-flex gap-3">
+                                                                  <i class="bi bi-hand-thumbs-down icon-hover"
+                                                                        title="Dislike"></i>
+                                                                  <i class="bi bi-three-dots icon-hover"
+                                                                        title="More"></i>
+                                                            </div>
+
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <div class=" pic col-md-4">
+                                                <img src="/images/2-1.png">
+                                          </div>
+
+                                    </div>
+
+                                    <div class="row-combo g-2">
+                                          <div class="col-md-8">
+                                                <div class="d-flex flex-wrap">
+                                                      <div class="d-flex flex-wrap mt-5 justify-content-center">
+                                                            <img src="/images/wise.png" alt="Logo">
+                                                            <p class="mx-2 small ">in</p>
+                                                            <h5 class="small">Psychology of Workplaces</h5>
+                                                            <p class="mx-2 small">by</p>
+                                                            <h5 class="small">George J. Ziogas</h5>
+                                                      </div>
+                                                      <h3 class="mt-2">Resumes Are Dying — Here’s What’s Replacing
+                                                            Them
+                                                      </h3>
+                                                      <p>How modern hiring is leaving resumes behind</p>
+
+                                                      <div class="d-flex">
+                                                            <div class="d-flex gap-3">
+                                                                  <i
+                                                                        class="bi bi-star-fill text-warning  star-icon"></i>
+                                                                  <p>4 june</p>
+                                                                  <i class="bi bi-hand-thumbs-up icon-hover"
+                                                                        title="Clap"></i>
+                                                                  <p>1.2k</p>
+                                                                  <i class="bi bi-chat-left-text icon-hover"
+                                                                        title="Response"></i>
+                                                                  <p>443</p>
+                                                            </div>
+                                                            <div class="d-flex gap-3">
+                                                                  <i class="bi bi-hand-thumbs-down icon-hover"
+                                                                        title="Dislike"></i>
+                                                                  <i class="bi bi-three-dots icon-hover"
+                                                                        title="More"></i>
+                                                            </div>
+
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <div class=" pic col-md-4">
+                                                <img src="/images/flower.png">
+                                          </div>
+
+                                    </div>
+
+                                    <div class="row-combo g-2">
+                                          <div class="col-md-8">
+                                                <div class="d-flex flex-wrap">
+                                                      <div class="d-flex flex-wrap mt-5 justify-content-center">
+                                                            <img src="/images/wise.png" alt="Logo">
+                                                            <p class="mx-2 small ">in</p>
+                                                            <h5 class="small">Psychology of Workplaces</h5>
+                                                            <p class="mx-2 small">by</p>
+                                                            <h5 class="small">George J. Ziogas</h5>
+                                                      </div>
+                                                      <h3 class="mt-2">Resumes Are Dying — Here’s What’s Replacing
+                                                            Them
+                                                      </h3>
+                                                      <p>How modern hiring is leaving resumes behind</p>
+
+                                                      <div class="d-flex">
+                                                            <div class="d-flex gap-3">
+                                                                  <i
+                                                                        class="bi bi-star-fill text-warning  star-icon"></i>
+                                                                  <p>4 june</p>
+                                                                  <i class="bi bi-hand-thumbs-up icon-hover"
+                                                                        title="Clap"></i>
+                                                                  <p>1.2k</p>
+                                                                  <i class="bi bi-chat-left-text icon-hover"
+                                                                        title="Response"></i>
+                                                                  <p>443</p>
+                                                            </div>
+                                                            <div class="d-flex gap-3">
+                                                                  <i class="bi bi-hand-thumbs-down icon-hover"
+                                                                        title="Dislike"></i>
+                                                                  <i class="bi bi-three-dots icon-hover"
+                                                                        title="More"></i>
+                                                            </div>
+
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <div class=" pic col-md-4">
+                                                <img src="/images/1_1.png">
+                                          </div>
+
+                                    </div>
+
+                                    <div class="row-combo g-2">
+                                          <div class="col-md-8">
+                                                <div class="d-flex flex-wrap">
+                                                      <div class="d-flex flex-wrap mt-5 justify-content-center">
+                                                            <img src="/images/wise.png" alt="Logo">
+                                                            <p class="mx-2 small ">in</p>
+                                                            <h5 class="small">Psychology of Workplaces</h5>
+                                                            <p class="mx-2 small">by</p>
+                                                            <h5 class="small">George J. Ziogas</h5>
+                                                      </div>
+                                                      <h3 class="mt-2">Resumes Are Dying — Here’s What’s Replacing
+                                                            Them
+                                                      </h3>
+                                                      <p>How modern hiring is leaving resumes behind</p>
+
+                                                      <div class="d-flex">
+                                                            <div class="d-flex gap-3">
+                                                                  <i
+                                                                        class="bi bi-star-fill text-warning  star-icon"></i>
+                                                                  <p>4 june</p>
+                                                                  <i class="bi bi-hand-thumbs-up icon-hover"
+                                                                        title="Clap"></i>
+                                                                  <p>1.2k</p>
+                                                                  <i class="bi bi-chat-left-text icon-hover"
+                                                                        title="Response"></i>
+                                                                  <p>443</p>
+                                                            </div>
+                                                            <div class="d-flex gap-3">
+                                                                  <i class="bi bi-hand-thumbs-down icon-hover"
+                                                                        title="Dislike"></i>
+                                                                  <i class="bi bi-three-dots icon-hover"
+                                                                        title="More"></i>
+                                                            </div>
+
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <div class=" pic col-md-4">
+                                                <img src="/images/2-1.png">
+                                          </div>
+
+                                    </div>
+                              </div>
+
+                              <div class=" side col-md-4 mt-3 ">
+                                    <div>
+                                          <h5>Staff pick</h5>
+                                          <div>
+                                                <div class="d-flex flex-wrap mt-5">
+                                                      <img src="/images/wise.png" alt="Logo">
+                                                      <p class="mx-2 small">in</p>
+                                                      <h5 class="small">Wise & Well</h5>
+                                                      <p class="mx-2 small">by</p>
+                                                      <h5 class="small">Gail Post, Ph.D.</h5>
+                                                </div>
+                                                <p class="mt-2">The Secret to Reducing Clutter is Deep Inside You
+                                                </p>
+
+                                                <div class="d-flex">
+                                                      <i class="bi bi-star-fill text-warning star-icon mx-2"></i>
+                                                      <p>4 june</p>
+                                                </div>
+                                          </div>
+
+                                          <div>
+                                                <div class="d-flex flex-wrap mt-5">
+                                                      <img src="/images/wise.png" alt="Logo">
+                                                      <p class="mx-2 small">in</p>
+                                                      <h5 class="small">Westenberg</h5>
+                                                      <p class="mx-2 small">by</p>
+                                                      <h5 class="small">JA Westenberg</h5>
+                                                </div>
+                                                <p class="mt-2">I Deleted My Second Brain</p>
+
+                                                <div class="d-flex">
+                                                      <i class="bi bi-star-fill text-warning star-icon mx-2"></i>
+                                                      <p>1 day ago</p>
+                                                </div>
+                                          </div>
+
+                                          <div>
+                                                <div class="d-flex flex-wrap mt-5">
+                                                      <img src="/images/wise.png" alt="Logo">
+                                                      <p class="mx-2 small">in</p>
+                                                      <h5 class="small">The Medium Blog</h5>
+                                                      <p class="mx-2 small">by</p>
+                                                      <h5 class="small">Carly Rose Gillis</h5>
+                                                </div>
+                                                <p class="mt-2">Save the date for Medium Day 2025</p>
+
+                                                <div class="d-flex">
+                                                      <i class="bi bi-star-fill text-warning star-icon mx-2"></i>
+                                                      <p>5 day ago</p>
+                                                </div>
+                                                <button class="btn btn-light mt-3 py-2">see the full list</button>
+                                                <div>
+                                                </div>
+
+                                                <div>
+                                                      <h5 class="mt-5">Recomended Topics</h5>
+                                                      <div class="">
+                                                            <button class="mt-2 mx-2 py-1 rounded-5">Data
+                                                                  Science</button>
+                                                            <button class="mt-2 mx-2  py-1 rounded-5">Writing</button>
+                                                            <button class="mt-2 mx-2 py-1 rounded-5">Politics</button>
+                                                            <button
+                                                                  class="mt-2 mx-2 py-1 rounded-5">Productivity</button>
+                                                            <button
+                                                                  class="mt-2 mx-2 py-1 rounded-5">Cryptocurrency</button>
+                                                            <button class="mt-2 mx-2 py-1 rounded-5">Machine
+                                                                  Learning</button>
+                                                            <button class="mt-2 mx-2 py-1 rounded-5">psychology</button>
+                                                      </div>
+                                                      <button class="btn btn-light mt-3 py-2">see more
+                                                            Topics</button>
+                                                </div>
+
+                                                <div>
+                                                      <h5 class="mt-5">Reading List</h5>
+                                                      <p>Click <i
+                                                                  class="bi bi-cloud-download-fill fs-4 text-dark download-icon mx-2"></i>
+                                                            the on any story to easily add it to your reading list
+                                                            or
+                                                            a custom list that you can share.</p>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <footer>
+                                          <div class="mt-5">
+                                                <button class="btn btn-light mt-3 btn-sm">Help</button>
+                                                <button class="btn btn-light mt-3 btn-sm">Status</button>
+                                                <button class="btn btn-light mt-3 btn-sm">About</button>
+                                                <button class="btn btn-light mt-3 btn-sm">Careers</button>
+                                                <button class="btn btn-light mt-3 btn-sm">Press</button>
+                                                <button class="btn btn-light mt-3 btn-sm">Blog</button>
+                                                <button class="btn btn-light mt-3 btn-sm">Privacy</button>
+                                                <button class="btn btn-light mt-3 btn-sm">Rules</button>
+                                                <button class="btn btn-light mt-3 btn-sm">Terms</button>
+                                                <button class="btn btn-light mt-3 btn-sm">Text to speech</button>
+                                          </div>
+                                    </footer>
+                              </div>
+                        </div>
+                  </div>
+
+            </section>
+      </main>
+
+      <!-- Bootstrap JavaScript Libraries -->
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"></script>
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
