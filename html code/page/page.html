@@ -20,21 +20,32 @@
 
             .icon-hover:hover {
                   transform: scale(1.2);
-                  color: #0d6efd;
+                  color: #7e8153;
                   /* Bootstrap primary color */
             }
 
+
             .nav-pills .nav-link.active {
-                  background-color: #0d6efd;
+                  background-color: #94a65c;
             }
 
             img {
                   max-width: 25px;
+                  height: 20px;
+            }
+
+            .img-hover-zoom {
+                  transition: transform 0.5s ease;
+            }
+
+            .img-hover-zoom:hover {
+                  transform: scale(1.1);
             }
 
             .pic.col-md-4 img {
-                  max-width: 180px;
-                  margin-top: 80px;
+                  width: 100%;
+                  margin-top: 100px;
+                  height: 120px;
             }
 
             .carousel-item>.row>div {
@@ -51,7 +62,6 @@
                   border: 1px solid #dee2e6;
                   border-radius: 8px;
                   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
             }
 
             .carousel-control-prev,
@@ -68,67 +78,123 @@
                   width: 2rem;
                   height: 2rem;
             }
-            .row-combo{
+
+            .row-combo {
                   display: flex;
-            }
-
-            @media (max-width: 768px) {
-                  .carousel .col-md-4 {
-                        flex: 0 0 100%;
-                        max-width: 100%;
-                  }
+                  flex-wrap: nowrap;
 
             }
 
-            @media (min-width: 769px) {
-                  .carousel .col-md-4 {
-                        flex: 0 0 33.333%;
-                        max-width: 33.333%;
-                  }
-                
-            }
 
             .side.col-md-4 {
-                  position: sticky;
                   height: 100%;
                   top: 0;
                   display: flex;
                   flex-wrap: wrap;
+                  border: 2px solid rgb(242, 235, 235);
+
             }
+
+            .col-md-7 {
+
+                  display: flex;
+                  flex-wrap: wrap;
+                  border: 2px solid rgb(242, 235, 235);
+                  justify-content: start;
+
+            }
+
+            .navbar {
+                  border: 2px solid rgb(242, 235, 235);
+            }
+
+            .row-combo {
+                  display: flex;
+                  flex-wrap: nowrap;
+            }
+
+            @media only screen and (max-width: 600px) {
+                  .side.col-md-4 {
+                        display: none;
+                  }     
+            }
+            @media only screen and (max-width: 1080px) {
+                 .col-md-7 {
+                       display: flex;
+                       flex-wrap:wrap;
+                  } 
+                  .pic.col-md-4 img{
+                  
+                       width: 100%;
+                       height: fit-content;
+                       text-align: center;
+                       margin-top: 120px;
+                      
+                  }    
+            }
+             @media (max-width:600px) {
+                  .carousel .col-md-4 {
+                        flex: 0 0 100%;
+                        max-width: 100%;
+                  }
+            }
+
+            @media (min-width: 601px) {
+                  .carousel .col-md-4 {
+                        flex: 0 0 33.333%;
+                        max-width: 100%;
+                  }
+            }
+
       </style>
 </head>
 
 <body>
       <header>
             <nav class="navbar navbar-expand-sm bg-light">
-                  <div class="container-fluid d-flex align-items-center">
+                  <div class="container-fluid">
+                        <!-- Brand -->
                         <a class="navbar-brand fw-bolder fs-3" href="#">Medium</a>
 
-                        <form class="d-flex flex-grow-1" style="max-width: 200px; width: 100%;" role="search">
-                              <input class="form-control me-2" type="search" placeholder="Search..."
-                                    aria-label="Search">
-                        </form>
-                        <ul class="navbar-nav ms-auto align-items-center">
-                              <li class="nav-item">
-                                    <a class="nav-link text-dark d-flex align-items-center me-3 fs-5" href="#">
-                                          <i class="bi bi-pencil-square me-1 fs-4 icon-hover"></i> Write
-                                    </a>
-                              </li>
-                              <li class="nav-item">
-                                    <a class="nav-link text-dark d-flex align-items-center" href="#">
-                                          <i class="bi bi-bell fs-4 me-3 icon-hover"></i>
+                        <!-- Toggler Button -->
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+                              aria-label="Toggle navigation">
+                              <span class="navbar-toggler-icon"></span>
+                        </button>
 
-                                    </a>
-                              </li>
-                              <li class="nav-item">
-                                    <a class="nav-link text-dark d-flex align-items-center" href="#">
-                                          <i class="bi bi-person-circle fs-2 me-3 icon-hover"></i>
+                        <!-- Collapsible content -->
+                        <div class="collapse navbar-collapse" id="navbarContent">
+                              <!-- Search -->
+                              <form class="d-flex flex-grow-1 my-2 my-sm-0" style="max-width: 200px; width: 100%;"
+                                    role="search">
+                                    <input class="form-control me-2" type="search" placeholder="Search..."
+                                          aria-label="Search">
+                              </form>
 
-                                    </a>
-                              </li>
-                        </ul>
+                              <!-- Nav items -->
+                              <ul class="navbar-nav ms-auto align-items-center flex-column flex-sm-row">
+                                    <li class="nav-item">
+                                          <a class="nav-link text-dark d-flex align-items-center me-3 fs-5" href="#">
+                                                <i class="bi bi-pencil-square me-1 fs-4 icon-hover"></i> Write
+                                          </a>
+                                    </li>
+                                    <li class="nav-item">
+                                          <a class="nav-link text-dark d-flex align-items-center" href="#">
+                                                <i class="bi bi-bell fs-4 me-3 icon-hover"></i>
+                                          </a>
+                                    </li>
+                                    <li class="nav-item">
+                                          <a class="nav-link text-dark d-flex align-items-center" href="#">
+                                                <i class="bi bi-person-circle fs-2 me-3 icon-hover"></i>
+                                          </a>
+                                    </li>
+                              </ul>
+
+                        </div>
                   </div>
             </nav>
+
       </header>
       <main>
             <section id="page">
@@ -137,7 +203,7 @@
                               <div class="col-md-1"></div>
                               <div class="col-md-7">
 
-                                    <div class="container mt-5 p-0">
+                                    <div class="container mt-5">
                                           <div id="multiItemCarousel" class="carousel slide" data-bs-ride="carousel">
                                                 <div class="carousel-inner">
                                                       <!-- First slide -->
@@ -223,7 +289,8 @@
                                                 </div>
                                           </div>
                                           <div class=" pic col-md-4">
-                                                <img src="/images/1_1.png">
+                                                <img src="/images/bitmap-copy-aaaa.png"
+                                                      class="img-fluid img-hover-zoom">
                                           </div>
 
                                     </div>
@@ -266,7 +333,8 @@
                                                 </div>
                                           </div>
                                           <div class=" pic col-md-4">
-                                                <img src="/images/flower.png">
+                                                <img src="/images/bitmap-copy-dddd.png"
+                                                      class="img-fluid img-hover-zoom">
                                           </div>
 
                                     </div>
@@ -309,7 +377,8 @@
                                                 </div>
                                           </div>
                                           <div class=" pic col-md-4">
-                                                <img src="/images/2-1.png">
+                                                <img src="/images/bitmap-copy-ffff.png"
+                                                      class="img-fluid img-hover-zoom">
                                           </div>
 
                                     </div>
@@ -352,7 +421,7 @@
                                                 </div>
                                           </div>
                                           <div class=" pic col-md-4">
-                                                <img src="/images/1_1.png">
+                                                <img src="/images/bitmap-eeee.png" class="img-fluid img-hover-zoom">
                                           </div>
 
                                     </div>
@@ -395,7 +464,7 @@
                                                 </div>
                                           </div>
                                           <div class=" pic col-md-4">
-                                                <img src="/images/2-1.png">
+                                                <img src="/images/desibachi.png" class="img-fluid img-hover-zoom">
                                           </div>
 
                                     </div>
@@ -438,7 +507,8 @@
                                                 </div>
                                           </div>
                                           <div class=" pic col-md-4">
-                                                <img src="/images/flower.png">
+                                                <img src="/images/bitmap-copy-aaaa.png"
+                                                      class="img-fluid img-hover-zoom">
                                           </div>
 
                                     </div>
@@ -481,7 +551,8 @@
                                                 </div>
                                           </div>
                                           <div class=" pic col-md-4">
-                                                <img src="/images/1_1.png">
+                                                <img src="/images/bitmap-copy-dddd.png"
+                                                      class="img-fluid img-hover-zoom">
                                           </div>
 
                                     </div>
@@ -524,15 +595,188 @@
                                                 </div>
                                           </div>
                                           <div class=" pic col-md-4">
-                                                <img src="/images/2-1.png">
+                                                <img src="/images/bitmap-eeee.png" class="img-fluid img-hover-zoom">
+                                          </div>
+
+                                    </div>
+                                    <div class="row-combo g-2">
+                                          <div class="col-md-8">
+                                                <div class="d-flex flex-wrap">
+                                                      <div class="d-flex flex-wrap mt-5 justify-content-center">
+                                                            <img src="/images/wise.png" alt="Logo">
+                                                            <p class="mx-2 small ">in</p>
+                                                            <h5 class="small">Psychology of Workplaces</h5>
+                                                            <p class="mx-2 small">by</p>
+                                                            <h5 class="small">George J. Ziogas</h5>
+                                                      </div>
+                                                      <h3 class="mt-2">Resumes Are Dying — Here’s What’s Replacing
+                                                            Them
+                                                      </h3>
+                                                      <p>How modern hiring is leaving resumes behind</p>
+
+                                                      <div class="d-flex">
+                                                            <div class="d-flex gap-3">
+                                                                  <i
+                                                                        class="bi bi-star-fill text-warning  star-icon"></i>
+                                                                  <p>4 june</p>
+                                                                  <i class="bi bi-hand-thumbs-up icon-hover"
+                                                                        title="Clap"></i>
+                                                                  <p>1.2k</p>
+                                                                  <i class="bi bi-chat-left-text icon-hover"
+                                                                        title="Response"></i>
+                                                                  <p>443</p>
+                                                            </div>
+                                                            <div class="d-flex gap-3">
+                                                                  <i class="bi bi-hand-thumbs-down icon-hover"
+                                                                        title="Dislike"></i>
+                                                                  <i class="bi bi-three-dots icon-hover"
+                                                                        title="More"></i>
+                                                            </div>
+
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <div class=" pic col-md-4">
+                                                <img src="/images/desibachi.png" class="img-fluid img-hover-zoom">
+                                          </div>
+
+                                    </div>
+
+                                    <div class="row-combo g-2">
+                                          <div class="col-md-8">
+                                                <div class="d-flex flex-wrap">
+                                                      <div class="d-flex flex-wrap mt-5 justify-content-center">
+                                                            <img src="/images/wise.png" alt="Logo">
+                                                            <p class="mx-2 small ">in</p>
+                                                            <h5 class="small">Psychology of Workplaces</h5>
+                                                            <p class="mx-2 small">by</p>
+                                                            <h5 class="small">George J. Ziogas</h5>
+                                                      </div>
+                                                      <h3 class="mt-2">Resumes Are Dying — Here’s What’s Replacing
+                                                            Them
+                                                      </h3>
+                                                      <p>How modern hiring is leaving resumes behind</p>
+
+                                                      <div class="d-flex">
+                                                            <div class="d-flex gap-3">
+                                                                  <i
+                                                                        class="bi bi-star-fill text-warning  star-icon"></i>
+                                                                  <p>4 june</p>
+                                                                  <i class="bi bi-hand-thumbs-up icon-hover"
+                                                                        title="Clap"></i>
+                                                                  <p>1.2k</p>
+                                                                  <i class="bi bi-chat-left-text icon-hover"
+                                                                        title="Response"></i>
+                                                                  <p>443</p>
+                                                            </div>
+                                                            <div class="d-flex gap-3">
+                                                                  <i class="bi bi-hand-thumbs-down icon-hover"
+                                                                        title="Dislike"></i>
+                                                                  <i class="bi bi-three-dots icon-hover"
+                                                                        title="More"></i>
+                                                            </div>
+
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <div class=" pic col-md-4">
+                                                <img src="/images/bitmap-copy-aaaa.png"
+                                                      class="img-fluid img-hover-zoom">
+                                          </div>
+
+                                    </div>
+
+                                    <div class="row-combo g-2">
+                                          <div class="col-md-8">
+                                                <div class="d-flex flex-wrap">
+                                                      <div class="d-flex flex-wrap mt-5 justify-content-center">
+                                                            <img src="/images/wise.png" alt="Logo">
+                                                            <p class="mx-2 small ">in</p>
+                                                            <h5 class="small">Psychology of Workplaces</h5>
+                                                            <p class="mx-2 small">by</p>
+                                                            <h5 class="small">George J. Ziogas</h5>
+                                                      </div>
+                                                      <h3 class="mt-2">Resumes Are Dying — Here’s What’s Replacing
+                                                            Them
+                                                      </h3>
+                                                      <p>How modern hiring is leaving resumes behind</p>
+
+                                                      <div class="d-flex">
+                                                            <div class="d-flex gap-3">
+                                                                  <i
+                                                                        class="bi bi-star-fill text-warning  star-icon"></i>
+                                                                  <p>4 june</p>
+                                                                  <i class="bi bi-hand-thumbs-up icon-hover"
+                                                                        title="Clap"></i>
+                                                                  <p>1.2k</p>
+                                                                  <i class="bi bi-chat-left-text icon-hover"
+                                                                        title="Response"></i>
+                                                                  <p>443</p>
+                                                            </div>
+                                                            <div class="d-flex gap-3">
+                                                                  <i class="bi bi-hand-thumbs-down icon-hover"
+                                                                        title="Dislike"></i>
+                                                                  <i class="bi bi-three-dots icon-hover"
+                                                                        title="More"></i>
+                                                            </div>
+
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <div class=" pic col-md-4">
+                                                <img src="/images/bitmap-copy-dddd.png"
+                                                      class="img-fluid img-hover-zoom">
+                                          </div>
+
+                                    </div>
+
+                                    <div class="row-combo g-2">
+                                          <div class="col-md-8">
+                                                <div class="d-flex flex-wrap">
+                                                      <div class="d-flex flex-wrap mt-5 justify-content-center">
+                                                            <img src="/images/wise.png" alt="Logo">
+                                                            <p class="mx-2 small ">in</p>
+                                                            <h5 class="small">Psychology of Workplaces</h5>
+                                                            <p class="mx-2 small">by</p>
+                                                            <h5 class="small">George J. Ziogas</h5>
+                                                      </div>
+                                                      <h3 class="mt-2">Resumes Are Dying — Here’s What’s Replacing
+                                                            Them
+                                                      </h3>
+                                                      <p>How modern hiring is leaving resumes behind</p>
+
+                                                      <div class="d-flex">
+                                                            <div class="d-flex gap-3">
+                                                                  <i
+                                                                        class="bi bi-star-fill text-warning  star-icon"></i>
+                                                                  <p>4 june</p>
+                                                                  <i class="bi bi-hand-thumbs-up icon-hover"
+                                                                        title="Clap"></i>
+                                                                  <p>1.2k</p>
+                                                                  <i class="bi bi-chat-left-text icon-hover"
+                                                                        title="Response"></i>
+                                                                  <p>443</p>
+                                                            </div>
+                                                            <div class="d-flex gap-3">
+                                                                  <i class="bi bi-hand-thumbs-down icon-hover"
+                                                                        title="Dislike"></i>
+                                                                  <i class="bi bi-three-dots icon-hover"
+                                                                        title="More"></i>
+                                                            </div>
+
+                                                      </div>
+                                                </div>
+                                          </div>
+                                          <div class=" pic col-md-4">
+                                                <img src="/images/bitmap-eeee.png" class="img-fluid img-hover-zoom">
                                           </div>
 
                                     </div>
                               </div>
 
-                              <div class=" side col-md-4 mt-3 ">
+                              <div class=" side col-md-4 sticky-top">
                                     <div>
-                                          <h5>Staff pick</h5>
+                                          <h5 class="mt-5 fw-bold ">Staff pick</h5>
                                           <div>
                                                 <div class="d-flex flex-wrap mt-5">
                                                       <img src="/images/wise.png" alt="Logo">
@@ -587,17 +831,20 @@
                                                 <div>
                                                       <h5 class="mt-5">Recomended Topics</h5>
                                                       <div class="">
-                                                            <button class="mt-2 mx-2 py-1 rounded-5">Data
+                                                            <button class="mt-2 mx-2 py-1 rounded-5 border-0">Data
                                                                   Science</button>
-                                                            <button class="mt-2 mx-2  py-1 rounded-5">Writing</button>
-                                                            <button class="mt-2 mx-2 py-1 rounded-5">Politics</button>
                                                             <button
-                                                                  class="mt-2 mx-2 py-1 rounded-5">Productivity</button>
+                                                                  class="mt-2 mx-2  py-1 rounded-5 border-0">Writing</button>
                                                             <button
-                                                                  class="mt-2 mx-2 py-1 rounded-5">Cryptocurrency</button>
-                                                            <button class="mt-2 mx-2 py-1 rounded-5">Machine
+                                                                  class="mt-2 mx-2 py-1 rounded-5 border-0">Politics</button>
+                                                            <button
+                                                                  class="mt-2 mx-2 py-1 rounded-5 border-0">Productivity</button>
+                                                            <button
+                                                                  class="mt-2 mx-2 py-1 rounded-5 border-0">Cryptocurrency</button>
+                                                            <button class="mt-2 mx-2 py-1 rounded-5 border-0">Machine
                                                                   Learning</button>
-                                                            <button class="mt-2 mx-2 py-1 rounded-5">psychology</button>
+                                                            <button
+                                                                  class="mt-2 mx-2 py-1 rounded-5 border-0">psychology</button>
                                                       </div>
                                                       <button class="btn btn-light mt-3 py-2">see more
                                                             Topics</button>
@@ -605,7 +852,7 @@
 
                                                 <div>
                                                       <h5 class="mt-5">Reading List</h5>
-                                                      <p>Click <i
+                                                      <p class="p">Click <i
                                                                   class="bi bi-cloud-download-fill fs-4 text-dark download-icon mx-2"></i>
                                                             the on any story to easily add it to your reading list
                                                             or
