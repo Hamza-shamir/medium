@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>GitHub Clone</title>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+      <style>
+            body {
+                  font-family: "Lato", sans-serif;
+                  background-color: #131313;
+            }
+
+            .sidebar {
+                  height: 100%;
+                  width: 0;
+                  position: fixed;
+                  z-index: 1000;
+                  top: 0;
+                  left: 0;
+                  background-color: #111;
+                  overflow-x: hidden;
+                  transition: 0.5s;
+                  padding-top: 20px;
+
+            }
+
+            .sidebar a {
+                  font-size: 14px;
+                  padding: 5px;
+                  text-decoration: none;
+                  color: #fffdfd;
+                  display: block;
+                  transition: 0.3s;
+
+            }
+
+            .sidebar a:hover {
+                  color: #f1f1f1;
+            }
+
+            /* Special style for the close button */
+            .sidebar .closebtn {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  color: white;
+                  background-color: #111;
+            }
+
+            .openbtn {
+                  cursor: pointer;
+                  background-color: #111;
+                  color: white;
+                  /* padding: 10px 15px; */
+                  border: none;
+            }
+
+            .openbtn:hover {
+                  background-color: #444;
+            }
+
+            #main {
+                  transition: margin-left 0.5s;
+                  padding: 16px;
+            }
+
+            /* Add border to all custom buttons */
+            .btn {
+                  border: 1px solid #ccc !important;
+            }
+
+            @media screen and (max-height: 450px) {
+                  .sidebar {
+                        padding-top: 15px;
+                  }
+
+                  .sidebar a {
+                        font-size: 18px;
+                  }
+            }
+      </style>
+</head>
+
+<body>
+
+      <!-- Sidebar -->
+      <div id="mySidebar" class="sidebar d-flex flex-column justify-content-between" style="height: 100vh;">
+            <!-- Sidebar Content -->
+            <div>
+                  <a href="javascript:void(0)" class="closebtn d-flex justify-content-between align-items-center px-3"
+                        onclick="closeNav()">
+                        <i class="fa-brands fa-github fa-lg fs-1"></i>
+                        <span class="fs-3">×</span>
+                  </a>
+                  <a href="#"><i class="fa-sharp-duotone fa-solid fa-house-user fa-shake me-2"></i>Home</a>
+                  <a href="#"><i class="fa-sharp-duotone fa-solid fa-circle-stop fa-fade me-2"></i>Issues</a>
+                  <a href="#"><i class="fa-solid fa-code-pull-request fa-shake fa-lg me-2"></i>Pull Request</a>
+                  <a href="#"><i class="fa-sharp-duotone fa-solid fa-window-restore fa-bounce me-2"></i>Projects</a>
+                  <a href="#"><i class="fa-sharp-duotone fa-solid fa-comments fa-fade me-2"></i>Discussions</a>
+                  <a href="#"><i class="fa-sharp-duotone fa-solid fa-regular fa-laptop-code fa-beat me-2"></i>Code
+                        Spaces</a>
+                  <a href="#"><i class="fa-brands fa-github-alt fa-fade me-2"></i>Copilot</a>
+                  <hr class="border-3 opacity-100 ">
+                  <a href="#"><i class="fa-brands fa-wpexplorer fa-bounce fa-lg me-2"></i>Explore</a>
+                  <a href="#"><i class="fa-sharp-duotone fa-solid fa-gift fa-shake fa-lg me-2"></i>Marketplace</a>
+                  <hr class="border-3 opacity-100 ">
+                  <a href="#" class="fw-bold"><small>Repositories</small></a>
+                  <a href="#"><i class="fa-sharp-duotone fa-solid fa-user fa-bounce me-2"></i>Hamza-shamir/medium</a>
+                  <a href="#"><i class="fa-sharp-duotone fa-solid fa-user fa-flip me-2"></i>Hamza-shamir/hamza118</a>
+                  <a href="#"><i class="fa-sharp-duotone fa-solid fa-user fa-beat-fade me-2"></i>Hassaan-Farooq/SCD</a>
+                  <div class="mt-auto pb-3">
+                        <p class="text-light small m-3"><small>© 2025 GitHub, Inc.</small></p>
+                        <div class="container d-flex justify-content-center">
+                              <ul class="list-inline mb-0 d-flex flex-wrap ">
+                                    <li class="list-inline-item small"><a href="url"><small>About</small></a></li>
+                                    <li class="list-inline-item small"><a href="url"><small>Blog</small></a></li>
+                                    <li class="list-inline-item small"><a href="url"><small>Terms</small></a></li>
+                                    <li class="list-inline-item small"><a href="url"><small>Privacy</small></a></li>
+                                    <li class="list-inline-item small"><a href="url"><small>Security</small></a></li>
+                                    <li class="list-inline-item small"><a href="url"><small>Status</small></a></li>
+                              </ul>
+                        </div>
+                  </div>
+                  <p><a href="#"><small>Do not share my personal information <br> Manage Cookies</small></a></p>
+            </div>
+      </div>
+
+      <!-- Main content -->
+      <div id="main">
+            <!-- Navbar -->
+            <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+                  <div class="container-fluid">
+                        <!-- Open sidebar button -->
+                        <button class="openbtn me-3" onclick="openNav()">☰</button>
+
+                        <a class="navbar-brand" href="#"><i class="fa-brands fa-github fa-beat-fade fa-xl"></i></a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                              data-bs-target="#collapsibleNavbar">
+                              <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                              <ul class="navbar-nav">
+                                    <li class="nav-item"><a class="nav-link" href="#">Hamza-Shamir</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">/</a></li>
+                                    <li class="nav-item"><a class="nav-link" href="#">Medium</a></li>
+                              </ul>
+
+                              <!-- Right side content -->
+                              <div class="ms-auto d-flex align-items-center gap-2">
+                                    <!-- Search -->
+                                    <form class="position-relative">
+                                          <input class="form-control me-2" type="text" placeholder="🔍 type / to search"
+                                                aria-label="search">
+                                    </form>
+
+                                    <!-- GitHub icon dropdown -->
+                                    <div class="dropdown">
+                                          <button
+                                                class="btn bg-secondary btn-lg rounded-3 dropdown-toggle d-flex align-items-center px-3 py-3"
+                                                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa-brands fa-github-alt fa-shake fa-xl mx-2"></i>
+                                          </button>
+
+                                          <ul class="dropdown-menu bg-secondary">
+                                                <p class="mt-2 mb-0 ms-1"><small>New Conversation In</small></p>
+                                                <li class="d-flex align-items-center justify-content-between px-2">
+                                                      <a class="dropdown-item d-flex align-items-center ps-0" href="#">
+                                                            <i
+                                                                  class="fa-sharp-duotone fa-solid fa-message fa-fade fa-lg flex-grow-1 me-2"></i>
+                                                            Assistive
+                                                      </a>
+                                                      <button
+                                                            class="btn btn-sm btn-outline-secondary bg-secondary d-flex align-items-center gap-1 px-2 py-1"
+                                                            style="color: #ffffff;">
+                                                            <i class="fa-solid fa-arrow-up fa-xs"></i>
+                                                            <small>C</small>
+                                                      </button>
+                                                </li>
+
+                                                <li>
+                                                      <a class="dropdown-item d-flex align-items-center ps-0" href="#">
+                                                            <i
+                                                                  class="fa-sharp-duotone fa-solid fa-star-of-david fa-fade fa-lg mx-2"></i>
+                                                            Spaces
+                                                      </a>
+                                                </li>
+
+                                                <li>
+                                                      <hr class="border-dark border-2 opacity-100 m-0 ">
+                                                </li>
+                                                <li><a class="dropdown-item  d-flex align-items-center ps-0" href="#">
+                                                            <i
+                                                                  class="fa-sharp-duotone fa-solid fa-download fa-fade mx-2"></i>Download
+                                                            For</a></li>
+                                                <li><a class="dropdown-item  d-flex align-items-center ps-0" href="#">
+                                                            <i class="fa-brands fa-github-alt fa-fade mx-2"></i>Your
+                                                            Copilot</a></li>
+                                          </ul>
+                                    </div>
+
+
+                                    <!-- Plus dropdown -->
+                                    <div class="dropdown p-2">
+                                          <button
+                                                class="btn bg-secondary btn-lg rounded-3 dropdown-toggle d-flex align-items-center px-3 py-3"
+                                                data-bs-toggle="dropdown">
+                                                <i class="fa-solid fa-plus fa-bounce fa-lg mx-2"></i>
+                                          </button>
+                                          <ul class="dropdown-menu bg-secondary">
+                                                <li><a class="dropdown-item" href="#"> <i
+                                                                  class="fa-sharp-duotone fa-solid fa-light fa-book-bookmark fa-fade me-2"></i>New
+                                                            Repository</a></li>
+                                                <li><a class="dropdown-item" href="#"> <i
+                                                                  class="fa-sharp-duotone fa-solid fa-light fa-book fa-fade me-2"></i>Import
+                                                            Repository</a></li>
+                                                <li>
+                                                      <hr class="border-dark border-1 opacity-100 m-0">
+                                                </li>
+                                                <li><a class="dropdown-item" href="#"> <i
+                                                                  class="fa-sharp-duotone fa-solid fa-regular fa-laptop-code fa-fade me-2"></i>New
+                                                            Codespace</a></li>
+                                                <li><a class="dropdown-item" href="#"> <i
+                                                                  class="fa-sharp-duotone fa-solid fa-arrows-left-right fa-fade me-2"></i>New
+                                                            Gist</a></li>
+                                                <li>
+                                                      <hr class="border-dark border-1 opacity-100 m-0">
+                                                </li>
+                                                <li><a class="dropdown-item" href="#"> <i
+                                                                  class="fa-sharp-duotone fa-solid fa-light fa-building fa-fade me-2"></i>New
+                                                            Organization</a></li>
+                                          </ul>
+                                    </div>
+
+                                    <!-- Extra Icons -->
+                                    <button class="btn bg-secondary rounded-3 p-2"><i
+                                                class="fa-regular fa-circle fa-flip"></i></button>
+                                    <button class="btn bg-secondary rounded-3 p-2"><i
+                                                class="fa-solid fa-code-pull-request fa-shake fa-lg"></i></button>
+                                    <button class="btn bg-secondary rounded-3 p-2"><i
+                                                class="fa-solid fa-box fa-fade fa-lg"></i></button>
+
+                                    <!-- User Icon -->
+                                    <i class="fa-solid fa-user-tie fa-beat fa-xl mx-4" style="color: #ededed;"></i>
+                              </div>
+                        </div>
+                  </div>
+            </nav>
+            <div class="d-flex bg-dark p-2 ">
+                  <button class="rounded-2 bg-dark opacity-20 text-white mx-3"><i
+                              class="fa-sharp-duotone fa-solid fa-regular fa-laptop-code fa-fade me-2"></i>
+                        code</button>
+                  <button class="rounded-2 bg-dark opacity-20 text-white mx-3">
+                        <i class="fa-sharp-duotone fa-solid fa-circle-stop fa-fade me-2"></i> issues</button>
+                  <button class="rounded-2 bg-dark opacity-20 text-white mx-3">
+                        <i class="fa-solid fa-code-pull-request fa-shake fa-lg me-2"></i> Pull Requests</button>
+                  <button class="rounded-2 bg-dark opacity-20 text-white mx-3">
+                        <i class="fa-sharp-duotone fa-solid fa-circle-play fa-fade fa-lg me-2"></i>Actions</button>
+                  <button class="rounded-2 bg-dark opacity-20 text-white mx-3">
+                        <i class="fa-sharp-duotone fa-solid fa-window-restore fa-bounce me-2"></i>Projects</button>
+                  <button class="rounded-2 bg-dark opacity-20 text-white mx-3">
+                        <i class="fa-sharp-duotone fa-solid fa-shield-halved fa-shake fa-sm me-2"></i>Security</button>
+                  <button class="rounded-2 bg-dark opacity-20 text-white mx-3">
+                        <i class="fa-sharp-duotone fa-solid fa-chart-line fa-beat-fade me-2"></i> Insights</button>
+                  <button class="rounded-2 bg-dark opacity-20 text-white mx-3">
+                        <i class="fa-sharp-duotone fa-solid fa-gear fa-spin me-2"></i> Settings</button>
+            </div>
+            <hr class="border border-white border-1 opacity-100 m-0">
+      </div>
+      <main>
+            <div class="container d-flex justify-content-between">
+                  <div class="d-flex align-items-center">
+                        <i class="fa-solid fa-user-tie fa-beat fa-xl mx-3" style="color: #ededed;"></i>
+                        <h4 class="mb-0 mt-2 text-white">Medium</h4>
+                        <button class="btn btn-outline-light btn-sm py-0 px-2 rounded-4 ms-2"
+                              style="font-size: 0.7rem;"><small>Public</small></button>
+                  </div>
+                  <div>
+                        <div class="d-flex align-items-center gap-3">
+
+                              <!-- Pin Button -->
+                              <button class="btn bg-secondary rounded-3 px-3 py-1">
+                                    <i class="fa-sharp-duotone fa-solid fa-thumbtack fa-bounce me-2"></i> Pin
+                              </button>
+
+                              <!-- Watch Dropdown -->
+                              <div class="dropdown">
+                                    <button
+                                          class="btn bg-secondary rounded-3 dropdown-toggle d-flex align-items-center px-3 py-1"
+                                          data-bs-toggle="dropdown">
+                                          <i class="fa-sharp-duotone fa-solid fa-eye fa-fade me-2"></i>
+                                          <span class="fw-semibold">Watch</span>
+                                    </button>
+
+                                    <ul class="dropdown-menu bg-dark text-white small px-2" style="min-width: 300px;">
+                                          <li class="mb-2">
+                                                <h6 class="dropdown-header text-white">Participating and @mentions</h6>
+                                                <p class="mb-1 ms-3">Only receive notifications when participating or
+                                                      mentioned.</p>
+                                          </li>
+                                          <hr class="border border-light my-1">
+
+                                          <li class="mb-2">
+                                                <h6 class="dropdown-header text-white">All Activity</h6>
+                                                <p class="mb-1 ms-3">Notified of all notifications on this repository.
+                                                </p>
+                                          </li>
+                                          <hr class="border border-light my-1">
+
+                                          <li class="mb-2">
+                                                <h6 class="dropdown-header text-white">Ignore</h6>
+                                                <p class="mb-1 ms-3">Never be notified.</p>
+                                          </li>
+                                          <hr class="border border-light my-1">
+
+                                          <li>
+                                                <h6 class="dropdown-header text-white">Custom</h6>
+                                                <p class="mb-1 ms-3">Select specific events for notifications.</p>
+                                          </li>
+                                    </ul>
+                              </div>
+                              <div class="dropdown">
+                                    <button
+                                          class="btn bg-secondary rounded-3 dropdown-toggle d-flex align-items-center px-3 py-1"
+                                          data-bs-toggle="dropdown">
+                                          <i class="fa-sharp-duotone fa-solid fa-code-fork fa-bounce fa-sm me-2"></i>
+                                          <span class="fw-semibold">Fork</span>
+                                    </button>
+
+                                    <ul class="dropdown-menu bg-dark text-white small px-2" style="min-width: 300px;">
+                                          <li class="mb-2">
+                                                <h6 class="dropdown-header text-white">Existing Forks.</h6>
+
+                                          </li>
+                                          <hr class="border border-light my-1">
+
+                                          <li class="mb-2">
+                                                <p class="dropdown-header text-white mb-1">You don't have any forks of
+                                                      this repository.
+                                                </p>
+                                          </li>
+                                    </ul>
+                              </div>
+                              <div class="dropdown">
+                                    <button
+                                          class="btn bg-secondary rounded-3 dropdown-toggle d-flex align-items-center px-3 py-1"
+                                          data-bs-toggle="dropdown">
+                                          <i class="fa-sharp-duotone fa-solid fa-code-fork fa-bounce fa-sm me-2"></i>
+                                          <span class="fw-semibold">Started</span>
+                                    </button>
+
+                                    <ul class="dropdown-menu bg-dark text-white small px-3" style="min-width: 300px;">
+
+                                          <li>
+                                                <h6 class="dropdown-header text-white">Lists</h6>
+                                          </li>
+
+                                          <li>
+                                                <hr class="border border-light my-1">
+                                          </li>
+
+                                          <li class="mb-2">
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox" value=""
+                                                            id="Option1">
+                                                      <label class="form-check-label text-white" for="Option1">
+                                                            <i
+                                                                  class="fa-sharp-duotone fa-solid fa-star-of-david fa-spin me-2 text-secondary"></i>Inspirations
+                                                      </label>
+                                                </div>
+                                          </li>
+
+                                          <li class="mb-2">
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox" value=""
+                                                            id="Option2">
+                                                      <label class="form-check-label text-white" for="Option2">
+                                                            <i
+                                                                  class="fa-sharp-duotone fa-solid fa-rocket fa-spin fa-sm me-2 text-secondary"></i>
+                                                            My Stack
+                                                      </label>
+                                                </div>
+                                          </li>
+                                          <li class="mb-2">
+                                                <div class="form-check">
+                                                      <input class="form-check-input" type="checkbox" value=""
+                                                            id="Option3">
+                                                      <label class="form-check-label text-white" for="Option3">
+                                                            <i
+                                                                  class="fa-sharp-duotone fa-solid fa-earth-asia fa-spin-pulse me-2 text-secondary"></i>Future
+                                                            Ideas
+                                                      </label>
+                                                </div>
+                                          </li>
+
+                                          <li>
+                                                <hr class="border border-light my-1">
+                                          </li>
+
+                                          <li class="mb-2">
+                                                <p class="text-white mb-0">You don't have any forks of this repository.
+                                                </p>
+                                          </li>
+                                    </ul>
+                              </div>
+
+                        </div>
+
+                  </div>
+            </div>
+            <hr class="border border-dark border-1 opacity-100">
+            <div class="container">
+                  <div class="row">
+                        <div class="col-md-9">
+                              <div class="d-flex flex-wrap align-items-center">
+
+                                    <!-- Branch Dropdown -->
+                                    <div class="dropdown">
+                                          <button
+                                                class="btn btn-sm bg-secondary rounded-3 dropdown-toggle d-flex align-items-center px-3 py-1 me-2"
+                                                data-bs-toggle="dropdown">
+                                                <i
+                                                      class="fa-sharp-duotone fa-solid fa-code-fork fa-bounce fa-sm me-2"></i>
+                                                <span class="fw-semibold">Master</span>
+                                          </button>
+                                          <ul class="dropdown-menu bg-dark text-white small px-3"
+                                                style="min-width: 300px;">
+                                                <li>
+                                                      <h6 class="dropdown-header text-white">Switch Branches / Tags</h6>
+                                                </li>
+                                                <form class="position-relative px-2">
+                                                      <input class="form-control form-control-sm mb-2" type="text"
+                                                            placeholder="🔍 Find or create a branch...">
+                                                </form>
+                                                <hr class="border border-light my-1">
+                                                <li class="mb-2">
+                                                      <div class="form-check">
+                                                            <input class="form-check-input" type="checkbox"
+                                                                  id="Option1">
+                                                            <label class="form-check-label text-white"
+                                                                  for="Option1">master</label>
+                                                      </div>
+                                                </li>
+                                                <li class="mb-2">
+                                                      <div class="d-flex justify-content-between align-items-center">
+                                                            <div class="form-check m-0">
+                                                                  <input class="form-check-input" type="checkbox"
+                                                                        id="Option2">
+                                                                  <label class="form-check-label text-white"
+                                                                        for="Option2">main</label>
+                                                            </div>
+                                                            <button
+                                                                  class="btn btn-outline-light btn-sm py-0 px-2 rounded-4"
+                                                                  style="font-size: 0.7rem;">
+                                                                  <small>default</small>
+                                                            </button>
+                                                      </div>
+                                                </li>
+                                                <hr class="border border-light my-1">
+                                                <li>
+                                                      <p class="text-white mb-0">View all branches.</p>
+                                                </li>
+                                          </ul>
+                                    </div>
+
+                                    <!-- Branches Button -->
+                                    <button class="btn btn-sm bg-secondary rounded-5 px-3 me-1">
+                                          <i class="fa-sharp-duotone fa-solid fa-code-fork fa-bounce fa-sm me-2"></i>
+                                          <span class="text-white">2</span> Branches
+                                    </button>
+
+                                    <!-- Tags Button -->
+                                    <button class="btn btn-sm bg-secondary rounded-5 px-3 me-5">
+                                          <i class="fa-sharp-duotone fa-solid fa-tag fa-shake fa-sm me-2"></i>
+                                          <span class="text-white">0</span> Tags
+                                    </button>
+
+                                    <!-- Go to File Search -->
+                                    <form class="position-relative ms-5">
+                                          <input class="form-control form-control-sm rounded-4 bg-secondary text-white "
+                                                type="text" placeholder="🔍 Go to file">
+                                    </form>
+
+                                    <!-- Add Files Dropdown -->
+                                    <div class="dropdown">
+                                          <button
+                                                class="btn btn-sm bg-secondary rounded-3 dropdown-toggle px-3 py-1 mx-3"
+                                                data-bs-toggle="dropdown">
+                                                <span class="fw-semibold">Add Files</span>
+                                          </button>
+                                          <ul class="dropdown-menu bg-dark text-white small px-3">
+                                                <li>
+                                                      <h6 class="dropdown-header text-white"><i
+                                                                  class="fa-solid fa-plus me-2"></i>Create New File</h6>
+                                                </li>
+                                                <li>
+                                                      <h6 class="dropdown-header text-white"><i
+                                                                  class="fa-solid fa-arrow-up-from-bracket me-2"></i>Upload
+                                                            Files</h6>
+                                                </li>
+                                          </ul>
+                                    </div>
+
+                                    <!-- Code Dropdown -->
+                                    <div class="dropdown">
+                                          <button class="btn btn-sm bg-secondary rounded-3 dropdown-toggle px-3 py-1"
+                                                data-bs-toggle="dropdown">
+                                                <i
+                                                      class="fa-sharp-duotone fa-solid fa-laptop-code fa-fade me-2"></i>Code
+                                          </button>
+                                    </div>
+                                    <div
+                                          class="d-flex text-white border border-2 border-dark opacity-100 w-100 justify-content-between align-items-center mt-3">
+                                          <div class="mt-2">
+                                                <p>This branch is <span class="text-primary">1 commit behind
+                                                      </span><button
+                                                            class="rounded-5 text-dark bg-secondary small px-3"><small>
+                                                                  Medium.</small></button></p>
+                                          </div>
+                                          <div class="dropdown ">
+                                                <button
+                                                      class="btn btn-sm bg-secondary rounded-3 dropdown-toggle px-3 py-1 me-2"
+                                                      data-bs-toggle="dropdown">
+                                                      <i
+                                                            class="fa-sharp-duotone fa-solid fa-laptop-code fa-fade me-2"></i>Contribute
+                                                </button>
+                                                <div class="dropdown-menu  bg-dark text-white small px-3">
+                                                      <h6 class="dropdown-header">This branch is not ahead of the
+                                                            upstream <button
+                                                                  class="rounded-5 bg-secondary text-white"><small>Medium.</small></button>
+                                                      </h6>
+                                                      <p class="dropdown-header">No new commits yet.Enjoy your day!</p>
+                                                </div>
+                                          </div>
+                                    </div>
+                                    <div
+                                          class="d-flex text-white justify-content-between align-items-center border border-2 border-dark opacity-100 w-100 mt-3">
+                                          <div class="d-flex mt-3 gap-2">
+
+                                                <h5><i class="fa-duotone fa-solid fa-user mx-2"></i>Hamza Shamir</h5>
+                                                <p>Initial commit</p>
+                                          </div>
+                                          <div class="d-flex mt-3 gap-2">
+                                                <p>4e90c5e . 2 weeks ago</p>
+                                                <h6 class="me-2"><i
+                                                            class="fa-solid fa-clock-rotate-left fa-spin fa-spin-reverse mx-2"></i>
+                                                      Commits</h6>
+                                          </div>
+                                    </div>
+                                    <div
+                                          class="d-flex text-white justify-content-between align-items-center border border-2 border-dark opacity-100 w-100">
+                                          <h6 class="m-2"><i class="fa-solid fa-folder fa-fade me-2"></i>html</h6>
+                                          <p class="m-2">initial commits</p>
+                                          <p class="m-2">2 weeks ago</p>
+                                    </div>
+                                    <div
+                                          class="d-flex text-white justify-content-between align-items-center border border-2 border-dark opacity-100 w-100">
+                                          <h6 class="m-2"><i class="fa-solid fa-folder fa-fade me-2"></i>html</h6>
+                                          <p class="m-2">initial commits</p>
+                                          <p class="m-2">2 weeks ago</p>
+                                    </div>
+                                    <div
+                                          class="d-flex text-white justify-content-between align-items-center border border-2 border-dark opacity-100 w-100 mt-3">
+                                          <h4 class="ms-2 mt-2"><i
+                                                      class="fa-sharp-duotone fa-solid fa-book-open fa-beat-fade fa-sm me-2"></i>Read
+                                                me</h4>
+                                    </div>
+                                    <div
+                                          class="d-flex flex-column justify-content-center align-items-center text-white align-items-start border border-2 border-dark opacity-100 w-100 p-3">
+                                          <i
+                                                class="fa-sharp-duotone fa-solid fa-book-open fa-beat fa-2xl mt-3 mb-3"></i>
+                                          <h2 class="mb-2 mt-2">Add a ReadMe</h2>
+                                          <p class="mb-3">Help people interested in this repository understand your
+                                                project by adding a README.</p>
+                                          <button class="btn text-white bg-primary mt-3">Add a README</button>
+                                    </div>
+
+                              </div>
+                        </div>
+
+                        <div class="col-md-3">
+                              <div class="d-flex justify-content-between align-items-center">
+                                    <h5 class="text-white">About</h5>
+                                    <i class="fa-sharp-duotone fa-solid fa-gear fa-spin me-2 text-white"></i>
+                              </div>
+                              <div class="d-flex flex-column text-secondary">
+                                    <h6 class="mt-3">
+                                          No description, website, or topics provided.
+                                    </h6>
+                                    <p class="small mt-2"><i class="fa-solid fa-chart-line fa-fade me-2"></i>Activity
+                                    </p>
+                                    <p class="small"><i class="fa-solid fa-star-half-stroke fa-spin me-2"></i>1 Star</p>
+                                    <p class="small"><i class="fa-solid fa-eye fa-fade me-2"></i>0 Watching</p>
+                                    <p class="small"><i class="fa-solid fa-code-fork fa-bounce me-2"></i>0 Forks</p>
+                                    <hr>
+                              </div>
+                              <div class="d-flex flex-column">
+                                    <h6 class="text-white">
+                                          Releases
+                                    </h6>
+                                    <p class="text-secondary mb-0 small">
+                                          <small>No releases published</small>
+                                    </p>
+                                    <a href="" class="small mt-0"><small>Create a new Release</small></a>
+                                    <hr class="border-secondary">
+                              </div>
+                              <div class="d-flex flex-column">
+                                    <h6 class="text-white">
+                                          Packages
+                                    </h6>
+                                    <p class="text-secondary mb-0 small">
+                                          <small>No Packages published</small>
+                                    </p>
+                                    <a href="" class="small mt-0"><small>Publish Your First Publish</small></a>
+                                    <hr class="border-secondary">
+                              </div>
+                              <div class="d-flex flex-column">
+                                    <h6 class="text-white">
+                                          Languages
+                                    </h6>
+                                    <div class="progress">
+                                          <div class="progress-bar progress-bar-warning" role="progressbar"
+                                                aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"
+                                                style="width:90%">
+                                                90%
+                                          </div>
+
+                                    </div>
+                                    <hr class="text-secondary">
+                              </div>
+                              <div class="d-flex flex-column">
+                                    <h6 class="text-white">
+                                          Suggested Workflows
+                                    </h6>
+                                    <p class="text-secondary">
+                                          Based on your tech stack
+                                    </p>
+                                    <div class="card">
+                                          <div class="card-body bg-dark">
+                                                <div class=" d-flex  justify-content-between align-items-center">
+                                                      <h5 class="card-title text-white">SLSA Generic</h5>
+                                                      <button
+                                                            class="btn btn-dark small rounded-3 px-2 py-1"><small>Configure</small></button>
+                                                </div>
+                                                <h6 class="text-white">generator</h6>
+                                                <p class="card-text text-secondary small"><small>Generate SLSA3
+                                                            provenance for your existing
+                                                            release workflows</small></p>
+                                          </div>
+                                    </div>
+
+                                    <div class="card mt-3">
+                                          <div class="card-body bg-dark">
+                                                <div class=" d-flex  justify-content-between align-items-center">
+                                                      <h5 class="card-title text-white">Jekyll using Docker</h5>
+                                                      <button
+                                                            class="btn btn-dark small rounded-3 px-2 py-1"><small>Configure</small></button>
+                                                </div>
+                                                <h6 class="text-white">image</h6>
+                                                <p class="card-text text-secondary small"><small>Package a Jekyll site
+                                                            using the jekyll/builder Docker image.</small></p>
+                                          </div>
+
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mt-4 mb-5">
+                                          <a href="" class="small">New Workflows</a>
+                                          <p class="text-secondary small"><small>Dismiss suggestions</small></p>
+                                    </div>
+                              </div>
+                        </div>
+                  </div>
+            </div>
+      </main>
+
+      <footer class="py-4 mt-5">
+            <div class="container">
+                  <div class="d-flex flex-wrap justify-content-center align-items-center">
+                        <span class="mb-2 mb-md-0 text-secondary small"><i class="fa-brands fa-github fa-xl me-2"></i><small>© 2025
+                              GitHub, Inc.</small></span>
+                        <ul class="list-inline mb-0">
+                              <li class="list-inline-item"><a href="#" class="text-decoration-none small mx-2"><small>Terms</small></a>
+                              </li>
+                              <li class="list-inline-item"><a href="#" class="text-decoration-none small"><small>Privacy</small></a>
+                              </li>
+                              <li class="list-inline-item"><a href="#" class="text-decoration-none small"><small>Security</small></a>
+                              </li>
+                              <li class="list-inline-item"><a href="#" class="text-decoration-none small"><small>Status</small></a>
+                              </li>
+                              <li class="list-inline-item"><a href="#" class="text-decoration-none small"><small>Docs</small></a>
+                              </li>
+                              <li class="list-inline-item"><a href="#" class="text-decoration-none small"><small>Contact</small></a>
+                              </li>
+                              <li class="list-inline-item"><a href="#" class="text-decoration-none small"><small>>Manage
+                                          cookies</small></a></li>
+                              <li class="list-inline-item"><a href="#" class="text-decoration-none small"><small>Do not
+                                          share my personal information</small></a></li>
+                        </ul>
+                  </div>
+            </div>
+      </footer>
+
+      <!-- Sidebar functionality -->
+      <script>
+            function openNav() {
+                  document.getElementById("mySidebar").style.width = "250px";
+                  document.getElementById("main").style.marginLeft = "250px";
+            }
+
+            function closeNav() {
+                  document.getElementById("mySidebar").style.width = "0";
+                  document.getElementById("main").style.marginLeft = "0";
+            }
+      </script>
+
+      <!-- Bootstrap JS -->
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
